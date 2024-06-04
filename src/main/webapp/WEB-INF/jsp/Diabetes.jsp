@@ -28,6 +28,7 @@
                 <h4>${Diabetes.getDate()}</h4>
 
 </c:forEach>
+<h1>hello</h1>
 
 </body>
 </html>
