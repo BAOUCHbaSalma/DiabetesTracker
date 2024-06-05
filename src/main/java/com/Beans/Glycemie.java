@@ -3,8 +3,6 @@ package com.Beans;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -13,20 +11,25 @@ public class Glycemie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idGlycemie;
+
     @Column
     private Integer valeurBefore;
+
     @Column
     private Integer valeurAfter;
 
     @Column
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate Date;
+    private LocalDate date;
+
     @Column
-    @DateTimeFormat(pattern = "HH:mm")
-    private LocalTime Heure;
+    @DateTimeFormat(pattern = "HH:mm:ss")
+    private LocalTime heure;
+
     @Column
     private Integer idDiabete;
 
+    // Constructors, getters, and setters
     public Glycemie() {
     }
 
@@ -54,20 +57,20 @@ public class Glycemie {
         this.valeurBefore = valeurBefore;
     }
 
-    public java.sql.Date getDate() {
-        return Date;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setDate(java.sql.Date date) {
-        Date = date;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    public Time getHeure() {
-        return Heure;
+    public LocalTime getHeure() {
+        return heure;
     }
 
-    public void setHeure(Time heure) {
-        Heure = heure;
+    public void setHeure(LocalTime heure) {
+        this.heure = heure;
     }
 
     public Integer getIdDiabete() {

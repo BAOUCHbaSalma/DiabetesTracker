@@ -24,6 +24,7 @@ public class GlycemieDAOImpl implements GlycemieDAO {
 
     @Override
     public void delete(Integer id) {
+
         glycemieRepository.deleteById(id);
     }
 }

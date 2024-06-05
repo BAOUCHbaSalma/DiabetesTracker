@@ -6,9 +6,10 @@ import com.DAO.GlycemieDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Controller
 public class GlycemieController {
@@ -22,11 +23,29 @@ public class GlycemieController {
     }
 
     @RequestMapping(value = "/saveGlycemie")
-    public String save(@ModelAttribute Glycemie glycemie){
+    public String save(@RequestParam("valeurBefore") Integer valeurBefore,
+                       @RequestParam("valeurAfter") Integer valeurAfter,
+                       @RequestParam("date") String date,
+                       @RequestParam("heure") String heure,
+                       @RequestParam("idDiabete") Integer idDiabete){
+
+        Glycemie glycemie = new Glycemie();
+        glycemie.setValeurBefore(valeurBefore);
+        glycemie.setValeurAfter(valeurAfter);
+        glycemie.setDate(LocalDate.parse(date));
+        glycemie.setHeure(LocalTime.parse(heure));
+        glycemie.setIdDiabete(idDiabete);
+
         glycemieDAO.AddGlycemie(glycemie);
         return "redirect:/";
     }
+    @RequestMapping("/delete/{id}")
+    public String show(@PathVariable("id") Integer id){
 
+        glycemieDAO.delete(id);
+
+        return "redirect:/";
+    }
 
 
 
