@@ -23,19 +23,7 @@ public class GlycemieController {
     }
 
     @RequestMapping(value = "/saveGlycemie")
-    public String save(@RequestParam("valeurBefore") Integer valeurBefore,
-                       @RequestParam("valeurAfter") Integer valeurAfter,
-                       @RequestParam("date") String date,
-                       @RequestParam("heure") String heure,
-                       @RequestParam("idDiabete") Integer idDiabete){
-
-        Glycemie glycemie = new Glycemie();
-        glycemie.setValeurBefore(valeurBefore);
-        glycemie.setValeurAfter(valeurAfter);
-        glycemie.setDate(LocalDate.parse(date));
-        glycemie.setHeure(LocalTime.parse(heure));
-        glycemie.setIdDiabete(idDiabete);
-
+    public String save(@ModelAttribute Glycemie glycemie){
         glycemieDAO.AddGlycemie(glycemie);
         return "redirect:/";
     }

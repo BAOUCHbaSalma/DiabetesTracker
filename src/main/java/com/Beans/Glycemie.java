@@ -21,10 +21,17 @@ public class Glycemie {
     @Column
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
+    @Column(name = "heurs")
+    @DateTimeFormat(pattern = "HH:mm")
+    private LocalTime heurs;
 
-    @Column
-    @DateTimeFormat(pattern = "HH:mm:ss")
-    private LocalTime heure;
+    public LocalTime getHeurs() {
+        return heurs;
+    }
+
+    public void setHeurs(LocalTime heurs) {
+        this.heurs = heurs;
+    }
 
     @Column
     private Integer idDiabete;
@@ -65,13 +72,8 @@ public class Glycemie {
         this.date = date;
     }
 
-    public LocalTime getHeure() {
-        return heure;
-    }
 
-    public void setHeure(LocalTime heure) {
-        this.heure = heure;
-    }
+
 
     public Integer getIdDiabete() {
         return idDiabete;
