@@ -19,4 +19,9 @@ public class DiabetesDAOImpl implements DiabetesDAO{
     public void AddDiabetes(Diabetes diabete) {
         diabetesRepository.save(diabete);
     }
+
+    @Override
+    public void delete(Integer id) {
+        diabetesRepository.deleteById(id);
+    }
 }

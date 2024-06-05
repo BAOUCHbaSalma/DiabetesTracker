@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -22,6 +23,13 @@ public class DiabetesController {
     @RequestMapping("/save")
     public String save(@ModelAttribute Diabetes diabetes){
      diabetesDAO.AddDiabetes(diabetes);
+        return "redirect:/";
+    }
+
+
+    @RequestMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Integer id){
+        diabetesDAO.delete(id);
         return "redirect:/";
     }
 
