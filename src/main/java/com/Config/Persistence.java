@@ -25,7 +25,7 @@ public class Persistence {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/diabetestracker");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/diabetetracker");
         dataSource.setUsername("root");
         dataSource.setPassword("");
         return dataSource;

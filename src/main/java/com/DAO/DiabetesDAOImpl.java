@@ -10,18 +10,15 @@ import java.util.ArrayList;
 public class DiabetesDAOImpl implements DiabetesDAO{
     @Autowired
     DiabetesRepository diabetesRepository;
+
     @Override
     public ArrayList<Diabetes> ShowDiabetes() {
         return (ArrayList<Diabetes>) diabetesRepository.findAll();
     }
 
     @Override
-    public void AddDiabetes(Diabetes diabete) {
-        diabetesRepository.save(diabete);
-    }
+    public void AddDiabete(Diabetes diabetes) {
+        diabetesRepository.save(diabetes);
 
-    @Override
-    public void delete(Integer id) {
-        diabetesRepository.deleteById(id);
     }
 }

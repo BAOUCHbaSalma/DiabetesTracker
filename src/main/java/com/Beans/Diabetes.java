@@ -13,64 +13,78 @@ public class Diabetes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idDiabete;
 
-    @Column(name = "user_id", nullable = false)
-    private Integer userId;
+    @Column
+    private String nameDiabete;
 
-    @Column(name = "diabetes", nullable = false)
-    private String diabetes;
+    @Column
+    private Integer poids;
 
-    @Column(name = "date", nullable = false)
-    private String date;
+    @Column
+    private Integer taille;
 
-    // Constructors, getters, and setters
+    @Column
+    private Integer ageDiabete;
 
-    public Diabetes(Integer id, Integer userId, String diabetes, String date) {
-        this.id = id;
-        this.userId = userId;
-        this.diabetes = diabetes;
-        this.date = date;
-    }
+    @Column
+    private String genre;
 
-    public Diabetes(Integer userId, String diabetes, String date) {
-        this.userId = userId;
-        this.diabetes = diabetes;
-        this.date = date;
-    }
 
     public Diabetes() {
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdDiabete() {
+        return idDiabete;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdDiabete(Integer idDiabete) {
+        this.idDiabete = idDiabete;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getNameDiabete() {
+        return nameDiabete;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setNameDiabete(String nameDiabete) {
+        this.nameDiabete = nameDiabete;
     }
 
-    public String getDiabetes() {
-        return diabetes;
+    public Integer getPoids() {
+        return poids;
     }
 
-    public void setDiabetes(String diabetes) {
-        this.diabetes = diabetes;
+    public void setPoids(Integer poids) {
+        this.poids = poids;
     }
 
-    public String getDate() {
-        return date;
+    public Integer getTaille() {
+        return taille;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTaille(Integer taille) {
+        this.taille = taille;
+    }
+
+    public Integer getAgeDiabete() {
+        return ageDiabete;
+    }
+
+    public void setAgeDiabete(Integer ageDiabete) {
+        this.ageDiabete = ageDiabete;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }
+
+
+
+
+
+
