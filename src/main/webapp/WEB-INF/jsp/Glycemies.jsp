@@ -3,11 +3,11 @@
 <html>
 <head>
     <title>Glycemie Form</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* Style to fix the chart size */
+
         .chart-container {
             width: 100%;
             max-width: 600px;
@@ -64,19 +64,34 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-        const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+        const labels = [
+            <c:forEach var="gl" items="${glycemies}" varStatus="status">
+            "${gl.date}"<c:if test="${!status.last}">,</c:if>
+            </c:forEach>
+        ];
+        const dataBefore = [
+            <c:forEach var="gl" items="${glycemies}" varStatus="status">
+            ${gl.valeurBefore}<c:if test="${!status.last}">,</c:if>
+            </c:forEach>
+        ];
+        const dataAfter = [
+            <c:forEach var="gl" items="${glycemies}" varStatus="status">
+            ${gl.valeurAfter}<c:if test="${!status.last}">,</c:if>
+            </c:forEach>
+        ];
+
         const data = {
             labels: labels,
             datasets: [
                 {
-                    label: 'Dataset 1',
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    label: 'Valeur Before',
+                    data: dataBefore,
                     borderColor: 'rgb(255, 99, 132)',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 },
                 {
-                    label: 'Dataset 2',
-                    data: [28, 48, 40, 19, 86, 27, 90],
+                    label: 'Valeur After',
+                    data: dataAfter,
                     borderColor: 'rgb(54, 162, 235)',
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 }
@@ -94,7 +109,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Chart.js Line Chart'
+                        text: 'Glycemie Levels Over Time'
                     }
                 }
             },
@@ -105,8 +120,6 @@
     });
 </script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
