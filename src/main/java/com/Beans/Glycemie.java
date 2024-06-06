@@ -21,35 +21,15 @@ public class Glycemie {
     @Column
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
+
     @Column(name = "heurs")
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime heurs;
+
     @ManyToOne
-    @JoinColumn(name = "idDiabete")
-    private Diabetes diabetes;
+    @JoinColumn(name = "idDiabetiques")
+    private Diabetiques diabetiques;
 
-
-    public Diabetes getDiabetes() {
-        return diabetes;
-    }
-
-    public void setDiabetes(Diabetes diabetes) {
-        this.diabetes = diabetes;
-    }
-
-
-
-    public LocalTime getHeurs() {
-        return heurs;
-    }
-
-    public void setHeurs(LocalTime heurs) {
-        this.heurs = heurs;
-    }
-
-
-
-    // Constructors, getters, and setters
     public Glycemie() {
     }
 
@@ -61,20 +41,20 @@ public class Glycemie {
         this.idGlycemie = idGlycemie;
     }
 
-    public Integer getValeurAfter() {
-        return valeurAfter;
-    }
-
-    public void setValeurAfter(Integer valeurAfter) {
-        this.valeurAfter = valeurAfter;
-    }
-
     public Integer getValeurBefore() {
         return valeurBefore;
     }
 
     public void setValeurBefore(Integer valeurBefore) {
         this.valeurBefore = valeurBefore;
+    }
+
+    public Integer getValeurAfter() {
+        return valeurAfter;
+    }
+
+    public void setValeurAfter(Integer valeurAfter) {
+        this.valeurAfter = valeurAfter;
     }
 
     public LocalDate getDate() {
@@ -85,4 +65,19 @@ public class Glycemie {
         this.date = date;
     }
 
+    public LocalTime getHeurs() {
+        return heurs;
+    }
+
+    public void setHeurs(LocalTime heurs) {
+        this.heurs = heurs;
+    }
+
+    public Diabetiques getDiabetiques() {
+        return diabetiques;
+    }
+
+    public void setDiabetiques(Diabetiques diabetiques) {
+        this.diabetiques = diabetiques;
+    }
 }

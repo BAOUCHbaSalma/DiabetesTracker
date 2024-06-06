@@ -22,7 +22,6 @@ public class GlycemieServicempl implements GlycemieService{
 
     @Override
     public void delete(Integer id) {
-
         glycemieRepository.deleteById(id);
     }
 }

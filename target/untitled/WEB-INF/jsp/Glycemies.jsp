@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Glycemie Form</title>
-
+    <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -35,8 +35,8 @@
             <input type="time" class="form-control" id="heurs" name="heurs" required>
         </div>
         <div class="form-group">
-            <label for="idDiabete">ID Diabete</label>
-            <input type="number" class="form-control" id="idDiabete" name="diabetes.idDiabete" required>
+            <label for="diabetiques.idDiabetiques">ID Diabete</label>
+            <input type="number" class="form-control" id="diabetiques.idDiabetiques" name="diabetiques.idDiabetiques" required>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
     </form>
@@ -49,7 +49,7 @@
                 <p class="mb-1">Valeur After: ${glycemie.valeurAfter}</p>
                 <p class="mb-1">Date: ${glycemie.date}</p>
                 <p class="mb-1">Heurs: ${glycemie.heurs}</p>
-                <p class="mb-1">ID Diabete: ${glycemie.diabetes.idDiabete}</p>
+                <p class="mb-1">ID Diabete: ${glycemie.diabetiques.idDiabetiques}</p>
                 <a href="delete/${glycemie.idGlycemie}" class="btn btn-danger">Delete</a>
             </div>
         </c:forEach>
