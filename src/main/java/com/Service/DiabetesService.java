@@ -1,11 +1,10 @@
-package com.DAO;
+package com.Service;
 
 import com.Beans.Diabetes;
-import com.Beans.Glycemie;
 
 import java.util.ArrayList;
 
-public interface DiabetesDAO {
+public interface DiabetesService {
     ArrayList<Diabetes> ShowDiabetes();
     void AddDiabete(Diabetes diabetes);
 

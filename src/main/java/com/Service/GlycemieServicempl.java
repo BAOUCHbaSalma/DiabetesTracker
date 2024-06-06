@@ -1,18 +1,16 @@
-package com.DAO;
+package com.Service;
 
-import com.Beans.Diabetes;
 import com.Beans.Glycemie;
-import com.Repository.DiabetesRepository;
 import com.Repository.GlycemieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 @Service
-public class GlycemieDAOImpl implements GlycemieDAO {
+public class GlycemieServicempl implements GlycemieService{
     @Autowired
     GlycemieRepository glycemieRepository;
-    @Override
+@Override
     public ArrayList<Glycemie> ShowGlycemies() {
         return (ArrayList<Glycemie>) glycemieRepository.findAll();
     }

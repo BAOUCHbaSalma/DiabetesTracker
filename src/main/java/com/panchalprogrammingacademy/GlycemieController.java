@@ -2,35 +2,32 @@ package com.panchalprogrammingacademy;
 
 import com.Beans.Glycemie;
 
-import com.DAO.GlycemieDAO;
+import com.Service.GlycemieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 @Controller
 public class GlycemieController {
     @Autowired
-    GlycemieDAO glycemieDAO;
+    GlycemieService glycemieService;
     @RequestMapping("/")
     public String show(Model model){
         model.addAttribute("glycemie", new Glycemie());
-        model.addAttribute("glycemies", glycemieDAO.ShowGlycemies());
+        model.addAttribute("glycemies", glycemieService.ShowGlycemies());
         return "Glycemies";
     }
 
     @RequestMapping(value = "/saveGlycemie")
     public String save(@ModelAttribute Glycemie glycemie){
-        glycemieDAO.AddGlycemie(glycemie);
+        glycemieService.AddGlycemie(glycemie);
         return "redirect:/";
     }
     @RequestMapping("/delete/{id}")
     public String show(@PathVariable("id") Integer id){
 
-        glycemieDAO.delete(id);
+        glycemieService.delete(id);
 
         return "redirect:/";
     }

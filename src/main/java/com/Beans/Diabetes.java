@@ -1,11 +1,8 @@
 package com.Beans;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Column;
+import javax.persistence.*;
+import java.util.Collection;
 
 
 @Entity(name = "diabetes")
@@ -29,6 +26,17 @@ public class Diabetes {
 
     @Column
     private String genre;
+    @OneToMany(mappedBy = "diabetes")
+    private Collection<Glycemie> valuesGlycemies;
+
+    public Collection<Glycemie> getValuesGlycemies() {
+        return valuesGlycemies;
+    }
+
+    public void setValuesGlycemies(Collection<Glycemie> valuesGlycemies) {
+        this.valuesGlycemies = valuesGlycemies;
+    }
+
 
 
     public Diabetes() {

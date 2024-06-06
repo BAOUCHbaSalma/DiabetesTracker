@@ -10,19 +10,29 @@ public class Ingredients {
     @Column
     private String name;
     @Column
-    private Integer Carbs;
+    private double Carbs;
     @Column
-    private Integer Kcal;
+    private double Kcal;
     @Column
-    private Integer Protein;
+    private double Protein;
     @Column
-    private Integer Gl;
+    private double Gl;
     @Column
-    private Integer Fat;
+    private double Fat;
+    @Column
+    private String Img;
     @Column
     private Integer RepasId;
 
     public Ingredients() {
+    }
+
+    public String getImg() {
+        return Img;
+    }
+
+    public void setImg(String img) {
+        Img = img;
     }
 
     public Integer getIdIngredient() {
@@ -41,45 +51,47 @@ public class Ingredients {
         this.name = name;
     }
 
-    public Integer getCarbs() {
+    public double getCarbs() {
         return Carbs;
     }
 
-    public void setCarbs(Integer carbs) {
+    public void setCarbs(double carbs) {
         Carbs = carbs;
     }
 
-    public Integer getKcal() {
+    public double getKcal() {
         return Kcal;
     }
 
-    public void setKcal(Integer kcal) {
+    public void setKcal(double kcal) {
         Kcal = kcal;
     }
 
-    public Integer getProtein() {
+    public double getProtein() {
         return Protein;
     }
 
-    public void setProtein(Integer protein) {
+    public void setProtein(double protein) {
         Protein = protein;
     }
 
-    public Integer getGl() {
+    public double getGl() {
         return Gl;
     }
 
-    public void setGl(Integer gl) {
+    public void setGl(double gl) {
         Gl = gl;
     }
 
-    public Integer getFat() {
+    public double getFat() {
         return Fat;
     }
 
-    public void setFat(Integer fat) {
+    public void setFat(double fat) {
         Fat = fat;
     }
+
+
 
     public Integer getRepasId() {
         return RepasId;

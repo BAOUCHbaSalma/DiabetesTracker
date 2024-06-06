@@ -1,4 +1,4 @@
-package com.DAO;
+package com.Service;
 
 import com.Beans.Diabetes;
 import com.Repository.DiabetesRepository;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 @Service
-public class DiabetesDAOImpl implements DiabetesDAO{
+public class DiabetesServiceImpl implements DiabetesService {
     @Autowired
     DiabetesRepository diabetesRepository;
 

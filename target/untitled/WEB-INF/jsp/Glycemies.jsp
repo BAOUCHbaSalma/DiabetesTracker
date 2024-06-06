@@ -3,11 +3,10 @@
 <html>
 <head>
     <title>Glycemie Form</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* Style to fix the chart size */
         .chart-container {
             width: 100%;
             max-width: 600px;
@@ -29,16 +28,15 @@
         </div>
         <div class="form-group">
             <label for="date">Date</label>
-            <input type="date" class="form-control" id="date" name="Date" required>
+            <input type="date" class="form-control" id="date" name="date" required>
         </div>
         <div class="form-group">
             <label for="heurs">Heurs</label>
             <input type="time" class="form-control" id="heurs" name="heurs" required>
         </div>
-
         <div class="form-group">
             <label for="idDiabete">ID Diabete</label>
-            <input type="number" class="form-control" id="idDiabete" name="idDiabete" required>
+            <input type="number" class="form-control" id="idDiabete" name="diabetes.idDiabete" required>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
     </form>
@@ -51,7 +49,7 @@
                 <p class="mb-1">Valeur After: ${glycemie.valeurAfter}</p>
                 <p class="mb-1">Date: ${glycemie.date}</p>
                 <p class="mb-1">Heurs: ${glycemie.heurs}</p>
-                <p class="mb-1">ID Diabete: ${glycemie.idDiabete}</p>
+                <p class="mb-1">ID Diabete: ${glycemie.diabetes.idDiabete}</p>
                 <a href="delete/${glycemie.idGlycemie}" class="btn btn-danger">Delete</a>
             </div>
         </c:forEach>
@@ -86,12 +84,14 @@
                 {
                     label: 'Valeur Before',
                     data: dataBefore,
+                    fill: true,
                     borderColor: 'rgb(255, 99, 132)',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 },
                 {
                     label: 'Valeur After',
                     data: dataAfter,
+                    fill: true,
                     borderColor: 'rgb(54, 162, 235)',
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 }
@@ -119,8 +119,7 @@
         new Chart(ctx, config);
     });
 </script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
