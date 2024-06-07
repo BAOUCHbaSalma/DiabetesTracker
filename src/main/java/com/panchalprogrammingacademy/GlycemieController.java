@@ -16,6 +16,7 @@ public class GlycemieController {
     public String show(Model model){
         model.addAttribute("glycemie", new Glycemie());
         model.addAttribute("glycemies", glycemieService.ShowGlycemies());
+
         return "Glycemies";
     }
 
