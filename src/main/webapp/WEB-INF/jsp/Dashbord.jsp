@@ -120,6 +120,7 @@
         <!-- ================ Add Charts JS ================= -->
         <div class="chartsBx">
             <h2>Graph of All</h2>
+            <button id="change">change</button>
             <div class="chart"> <canvas id="chart-1"></canvas> </div>
         </div>
 
@@ -145,13 +146,13 @@
                     </thead>
                     <c:forEach var="glycemie" items="${glycemies}">
                     <tbody>
-                    <tr >
+                    <tr class="containerOfResult">
                         <td>${glycemie.valeurBefore}</td>
-                        <td>${glycemie.valeurAfter}</td>
+                        <td class="diabetAll">${glycemie.valeurAfter}</td>
                         <td>${glycemie.date}</td>
                         <td>${glycemie.heurs}</td>
                         <td>${glycemie.diabetiques.idDiabetiques}</td>
-                        <td><span class="status delivered">Delivered</span></td>
+                        <td><span class="status delivered ">Delivered</span></td>
                         <td><a href="delete/${glycemie.idGlycemie}">Delete</a></td>
                     </tr>
                     </c:forEach>
@@ -183,28 +184,28 @@
             ${gl.valeurAfter}<c:if test="${!status.last}">,</c:if>
             </c:forEach>
         ];
-
+        let checked = true; // Changed to a boolean
         const data = {
             labels: labels,
             datasets: [
                 {
                     label: 'Valeur Before',
                     data: dataBefore,
-                    fill: true,
                     borderColor: 'rgb(255, 99, 132)',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 },
                 {
                     label: 'Valeur After',
                     data: dataAfter,
-                    fill: true,
+
                     borderColor: 'rgb(54, 162, 235)',
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 }
             ]
         };
+        let getting = localStorage.getItem("type");
         const config = {
-            type: 'line',
+            type: getting,
             data: data,
             options: {
                 responsive: true,
@@ -220,9 +221,42 @@
                 }
             },
         };
+        document.getElementById("change").addEventListener("click", () => {
+            if(checked){
+                localStorage.clear();
+                localStorage.setItem("type", "bar");
+                checked = false;
+                setTimeout(()=>{
+                    location.reload();
+                },300)
+
+            }
+            else {
+                localStorage.clear();
+                localStorage.setItem("type" , "line");
+                checked = true;
+                setTimeout(()=>{
+                    location.reload();
+                },300)
+            }
+        });
 
         const ctx = document.getElementById('chart-1').getContext('2d');
         new Chart(ctx, config);
+    });
+
+    document.querySelectorAll(".containerOfResult").forEach(e => {
+        const ArrayOfResult = ["Normale" , "Pas Normale"];
+        const diabetAll = parseFloat(e.querySelector(".diabetAll").textContent);
+        const status = e.querySelector(".status");
+
+        if (!isNaN(diabetAll)) {
+            if (diabetAll < 1.4) {
+                status.textContent = ArrayOfResult[0];
+            } else {
+                status.textContent = ArrayOfResult[1];
+                status.style.background= "red";
+        }}
     });
 </script>
 </body>

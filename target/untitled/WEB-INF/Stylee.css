@@ -290,39 +290,6 @@ body {
     left: 15px;
 }
 
-/* ================== Order Details List ============== */
-.details {
-    position: relative;
-    width: 100%;
-    padding: 20px;
-}
-
-.details .recentOrders {
-    position: relative;
-    background: var(--white);
-    padding: 20px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
-}
-
-.details .cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.cardHeader h2 {
-    font-weight: 600;
-    color: var(--blue);
-}
-.cardHeader .btn {
-    position: relative;
-    padding: 5px 10px;
-    background: var(--blue);
-    text-decoration: none;
-    color: var(--white);
-    border-radius: 6px;
-}
-
 
 /* ================== Order Details List ============== */
 .details {
@@ -333,8 +300,7 @@ body {
 
 .details .recentOrders {
     position: relative;
-    display: grid;
-    min-height: 500px;
+
     background: var(--white);
     padding: 20px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
