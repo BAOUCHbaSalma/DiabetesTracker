@@ -17,28 +17,29 @@
 </head>
 <body>
 <div class="container mt-5">
-    <form method="post" action="saveGlycemie" class="mb-5">
+    <form method="post" action="saveGlycemie" class="mb-5" id="myForm">
         <div class="form-group">
             <label for="valeurBefore">Valeur Before</label>
-            <input type="number" class="form-control" id="valeurBefore" name="valeurBefore" required>
+            <input type="number" class="form-control" id="valeurBefore" name="valeurBefore">
+            <h5 id="errorValeurBefore"></h5>
         </div>
         <div class="form-group">
             <label for="valeurAfter">Valeur After</label>
-            <input type="number" class="form-control" id="valeurAfter" name="valeurAfter" required>
+            <input type="number" class="form-control" id="valeurAfter" name="valeurAfter">
         </div>
         <div class="form-group">
             <label for="date">Date</label>
-            <input type="date" class="form-control" id="date" name="date" required>
+            <input type="date" class="form-control" id="date" name="date" >
         </div>
         <div class="form-group">
             <label for="heurs">Heurs</label>
-            <input type="time" class="form-control" id="heurs" name="heurs" required>
+            <input type="time" class="form-control" id="heurs" name="heurs" >
         </div>
         <div class="form-group">
             <label for="diabetiques.idDiabetiques">ID Diabete</label>
-            <input type="number" class="form-control" id="diabetiques.idDiabetiques" name="diabetiques.idDiabetiques" required>
+            <input type="number" class="form-control" id="diabetiques.idDiabetiques" name="diabetiques.idDiabetiques" >
         </div>
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary" id="add">Add</button>
     </form>
 
     <div class="list-group">
@@ -61,6 +62,18 @@
 </div>
 
 <script>
+    let myForm=document.getElementById('add');
+    myForm.addEventListener('submit',function (e){
+        let valeurBefore=document.getElementById('valeurBefore');
+        if(valeurBefore.trim() == ""){
+           let myErrorValeurBefore=document.getElementById("errorValeurBefore");
+            myErrorValeurBefore.innerHTML="Le champs valeur Before est requis";
+            myErrorValeurBefore.style.color='red';
+           e.preventDefault();
+        }
+
+    });
+
     document.addEventListener('DOMContentLoaded', (event) => {
         const labels = [
             <c:forEach var="gl" items="${glycemies}" varStatus="status">

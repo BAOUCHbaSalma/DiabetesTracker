@@ -17,7 +17,7 @@ public class GlycemieController {
         model.addAttribute("glycemie", new Glycemie());
         model.addAttribute("glycemies", glycemieService.ShowGlycemies());
 
-        return "Glycemies";
+        return "Dashbord";
     }
 
     @RequestMapping(value = "/saveGlycemie")
