@@ -35,7 +35,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="/">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -44,11 +44,11 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="Form">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                    <span class="title">Customers</span>
+                    <span class="title">Glycemies</span>
                 </a>
             </li>
 
@@ -121,7 +121,7 @@
 
         <!-- ================ Add Charts JS ================= -->
         <div class="chartsBx">
-            <h2>Graph of All</h2>
+            <h2>Graphique</h2>
             <button id="change"><i class="bi bi-arrow-left-circle"></i></button>
             <button id="back"><i class="bi bi-arrow-right-circle"></i></button>
             <div class="chart"> <canvas id="chart-1"></canvas> </div>
@@ -131,7 +131,7 @@
         <div class="details">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2>Recent Orders</h2>
+                    <h2>Glycemies</h2>
                     <a href="#" class="btn">View All</a>
                 </div>
 

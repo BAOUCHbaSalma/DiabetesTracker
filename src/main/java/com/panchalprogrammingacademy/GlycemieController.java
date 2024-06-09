@@ -14,10 +14,9 @@ public class GlycemieController {
     GlycemieService glycemieService;
     @RequestMapping("/")
     public String show(Model model){
-        model.addAttribute("glycemie", new Glycemie());
         model.addAttribute("glycemies", glycemieService.ShowGlycemies());
 
-        return "ajouterG";
+        return "Dashbord";
     }
 
     @RequestMapping(value = "/saveGlycemie")
@@ -31,6 +30,12 @@ public class GlycemieController {
         glycemieService.delete(id);
 
         return "redirect:/";
+    }
+
+    @RequestMapping("/Form")
+    public String Form(Model model){
+        model.addAttribute("glycemie", new Glycemie());
+        return "ajouterG";
     }
 
 

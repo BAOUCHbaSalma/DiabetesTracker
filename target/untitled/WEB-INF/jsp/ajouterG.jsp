@@ -35,7 +35,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="/">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -44,11 +44,11 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="Form">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                    <span class="title">Customers</span>
+                    <span class="title">Glycemies</span>
                 </a>
             </li>
 
@@ -120,7 +120,7 @@
 
 
         <div class="main-add">
-            <h2>Add Result</h2>
+            <h2>Ajouter une valeur</h2>
             <div class="main-wrapper">
                 <div class="left-part">
                 <form method="post" action="saveGlycemie" class="mb-5" id="myForm">

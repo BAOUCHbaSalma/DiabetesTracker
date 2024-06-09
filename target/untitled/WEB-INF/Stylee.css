@@ -517,10 +517,9 @@ body {
 .main-add{
     width: 95%;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 50px;
     border-radius: 12px;
     position: relative;
-    padding:  20px 15px;
 }
 .main-add > h2{
     color: #1795ce;
