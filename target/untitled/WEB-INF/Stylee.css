@@ -514,3 +514,29 @@ body {
 #logo > .icon{
     width: 140px;
 }
+.main-add{
+    width: 95%;
+    margin: 20px auto;
+    border: 1px solid #ff0000;
+    border-radius: 12px;
+    position: relative;
+    padding: 15px;
+}
+.main-add > h2{
+    color: #1795ce;
+    font-weight: 700;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    background: white;
+    padding: 5px;
+}
+.main-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-part{
+    width: 46%;
+}
