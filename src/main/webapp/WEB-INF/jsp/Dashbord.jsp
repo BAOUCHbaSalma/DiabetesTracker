@@ -121,6 +121,7 @@
         <div class="chartsBx">
             <h2>Graph of All</h2>
             <button id="change">change</button>
+            <button id="back">back</button>
             <div class="chart"> <canvas id="chart-1"></canvas> </div>
         </div>
 
@@ -184,7 +185,7 @@
             ${gl.valeurAfter}<c:if test="${!status.last}">,</c:if>
             </c:forEach>
         ];
-        let checked = true; // Changed to a boolean
+        let checked = false; // Changed to a boolean
         const data = {
             labels: labels,
             datasets: [
@@ -222,23 +223,26 @@
             },
         };
         document.getElementById("change").addEventListener("click", () => {
-            if(checked){
+
                 localStorage.clear();
                 localStorage.setItem("type", "bar");
                 checked = false;
                 setTimeout(()=>{
                     location.reload();
-                },300)
+                },600)
 
-            }
-            else {
+
+        });
+
+        document.getElementById("back").addEventListener("click", () => {
+
                 localStorage.clear();
                 localStorage.setItem("type" , "line");
                 checked = true;
                 setTimeout(()=>{
                     location.reload();
-                },300)
-            }
+                },600)
+
         });
 
         const ctx = document.getElementById('chart-1').getContext('2d');
