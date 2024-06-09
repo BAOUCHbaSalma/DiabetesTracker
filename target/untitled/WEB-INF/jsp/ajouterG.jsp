@@ -123,15 +123,15 @@
             <h2>Add Result</h2>
             <div class="main-wrapper">
                 <div class="left-part">
-                </div>  <form method="post" action="saveGlycemie" class="mb-5" id="myForm">
+                <form method="post" action="saveGlycemie" class="mb-5" id="myForm">
                 <div class="form-group">
                     <label for="valeurBefore">Valeur Before</label>
-                    <input type="number" class="form-control" id="valeurBefore" name="valeurBefore">
+                    <input type="number" class="form-control" id="valeurBefore" name="valeurBefore" placeholder="Before Value">
                     <h5 id="errorValeurBefore"></h5>
                 </div>
                 <div class="form-group">
                     <label for="valeurAfter">Valeur After</label>
-                    <input type="number" class="form-control" id="valeurAfter" name="valeurAfter">
+                    <input type="number" class="form-control" id="valeurAfter" name="valeurAfter" placeholder="After Value">
                 </div>
                 <div class="form-group">
                     <label for="date">Date</label>
@@ -142,15 +142,14 @@
                     <input type="time" class="form-control" id="heurs" name="heurs" >
                 </div>
                 <div class="form-group">
-                    <label for="diabetiques.idDiabetiques">ID Diabete</label>
-                    <input type="number" class="form-control" id="diabetiques.idDiabetiques" name="diabetiques.idDiabetiques" >
+                    <label for="diabetiques.idDiabetiques" >ID Diabete</label>
+                    <input type="number" class="form-control" id="diabetiques.idDiabetiques" name="diabetiques.idDiabetiques" value="1" >
                 </div>
                 <button type="submit" class="btn btn-primary" id="add">Add</button>
             </form>
-
-
-                <div class="left-part">
-
+                </div>
+                <div class="right-part">
+                    <img src="https://i.ibb.co/t4nNSwD/Green-Pink-Minimalist-Doodle-A4-Document-1.png" width="100%"/>
                 </div>
             </div>
         </div>

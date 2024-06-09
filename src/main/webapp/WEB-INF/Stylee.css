@@ -516,11 +516,11 @@ body {
 }
 .main-add{
     width: 95%;
-    margin: 20px auto;
-    border: 1px solid #ff0000;
+    margin: 0 auto;
+    margin-top: 30px;
     border-radius: 12px;
     position: relative;
-    padding: 15px;
+    padding:  20px 15px;
 }
 .main-add > h2{
     color: #1795ce;
@@ -535,8 +535,51 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
 .left-part{
     width: 46%;
+}
+.left-part > form{
+    width: 100%;
+    padding:20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+.left-part > form > .form-group{
+    width: 90%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid #1795ce;
+}
+.left-part > form > .form-group > label{
+    color: black;
+    border-right: 1px solid #1795ce;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 10px 15px;
+}
+
+.left-part > form > .form-group > input{
+    font-weight: 800;
+    font-size: 15px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+#add{
+    padding: 10px 15px;
+    color: white;
+    background: #ff0000;
+    border-radius: 12px;
+    font-weight: 800;
+    border: none;
+    font-size: 16px;
+    margin-left: 30px;
+}
+.right-part{
+    width: 40%;
 }
