@@ -17,6 +17,7 @@
     <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
     <!-- ======= Styles ====== -->
    <style> <%@include file="../Stylee.css"%></style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -26,11 +27,10 @@
     <div class="navigation">
         <ul>
             <li>
-                <a href="#">
+                <a href="#" id="logo">
                         <span class="icon">
-                            <ion-icon name="logo-apple"></ion-icon>
+                            <img src="https://i.ibb.co/4VHVgGN/o.png" width="100%">
                         </span>
-                    <span class="title">Brand Name</span>
                 </a>
             </li>
 
@@ -106,13 +106,15 @@
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
 
-            <div class="search">
-                <label>
-                    <input type="text" placeholder="Search here">
-                    <ion-icon name="search-outline"></ion-icon>
-                </label>
-            </div>
+           <div class="containerE">
+               <div class="search">
+                   <label>
+                       <input type="text" placeholder="Search here">
+                       <ion-icon name="search-outline"></ion-icon>
+                   </label>
+               </div>
 
+           </div>
 
         </div>
 
@@ -120,8 +122,8 @@
         <!-- ================ Add Charts JS ================= -->
         <div class="chartsBx">
             <h2>Graph of All</h2>
-            <button id="change">change</button>
-            <button id="back">back</button>
+            <button id="change"><i class="bi bi-arrow-left-circle"></i></button>
+            <button id="back"><i class="bi bi-arrow-right-circle"></i></button>
             <div class="chart"> <canvas id="chart-1"></canvas> </div>
         </div>
 
@@ -154,7 +156,7 @@
                         <td>${glycemie.heurs}</td>
                         <td>${glycemie.diabetiques.idDiabetiques}</td>
                         <td><span class="status delivered ">Delivered</span></td>
-                        <td><a href="delete/${glycemie.idGlycemie}">Delete</a></td>
+                        <td id="delete"><a href="delete/${glycemie.idGlycemie}"><i class="bi bi-trash-fill"></i></a></td>
                     </tr>
                     </c:forEach>
                 </table>

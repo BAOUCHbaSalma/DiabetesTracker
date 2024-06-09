@@ -10,7 +10,7 @@
 }
 
 :root {
-    --blue: #2a2185;
+    --blue: #00ADEF;
     --white: #fff;
     --gray: #f5f5f5;
     --black1: #222;
@@ -167,6 +167,12 @@ body {
     position: relative;
     width: 400px;
     margin: 0 10px;
+}
+.containerE{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search label {
@@ -348,7 +354,7 @@ body {
 }
 
 .details .recentOrders table tbody tr:hover {
-    background: var(--blue);
+    background:#00ADEF;
     color: var(--white);
 }
 
@@ -476,4 +482,35 @@ body {
         right: 0;
         left: initial;
     }
+}
+#change , #back{
+    background: transparent;
+    color: #ED0E64;
+    font-size: 20px;
+    border: none;
+    transition: .5s;
+    cursor: pointer;
+    margin: 5px;
+}
+#change:hover , #back:hover{
+    transform: scale(1.1);
+}
+#delete > a {
+    color: #c51157;
+    transition: .4s;
+    cursor: pointer;
+}
+#delete > a:hover{
+    color: white;
+
+}
+#logo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+#logo > .icon{
+    width: 140px;
 }
